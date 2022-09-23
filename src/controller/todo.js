@@ -62,7 +62,7 @@ router.put('/todos/complete/:id',  reqValidator( schemas.todoCOMPLETE ,'params')
 })
 
 //DELETE
-router.delete('/todos/:id',  reqValidator( schemas.todoDELETE ,'params'), async (req, res) => {
+router.delete('/todos/delete/:id',  reqValidator( schemas.todoDELETE ,'params'), async (req, res) => {
     try {
         const deleteTodos = await todos.deleteTodos(req.params.id);
         res.json({ deleted: deleteTodos})
